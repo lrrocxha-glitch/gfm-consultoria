@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GFM Consultoria</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff; /* Alterado para fundo branco */
+            color: #000000; /* Texto preto */
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #1a1a1a;
+        }
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            background: linear-gradient(to right, #1a1a1a, #333);
+        }
+        .services, .methodology, .contact {
+            padding: 50px 20px;
+        }
+        .service-card {
+            background: #1a1a1a;
+            margin: 10px;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #1a1a1a;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">GFM Consultoria</div>
+    <button>Solicitar proposta</button>
+</header>
+
+<section class="hero">
+    <h1>Consultoria para negócios que querem escalar com mídia paga e estratégia.</h1>
+    <p>Do planejamento à execução: cuidamos de todo o seu marketing de performance</p>
+    <button>Agende um diagnóstico gratuito</button>
+</section>
+
+<section class="services">
+    <h2>Nossas Soluções</h2>
+    <div class="service-card">Tráfego Pago Especializado</div>
+    <div class="service-card">Diagnóstico 360°</div>
+    <div class="service-card">Acompanhamento 360°</div>
+    <div class="service-card">Funis de Venda Otimizados</div>
+    <div class="service-card">CRM & Automação</div>
+    <div class="service-card">Criação de Landing Pages</div>
+</section>
+
+<section class="methodology">
+    <h2>Nossa Metodologia</h2>
+    <p>Mais de 100 negócios atendidos em e-commerce e B2B.</p>
+</section>
+
+<section class="contact">
+    <h2>Contato</h2>
+    <form>
+        <input type="text" placeholder="Seu nome" required>
+        <input type="email" placeholder="E-mail" required>
+        <input type="text" placeholder="WhatsApp com DDD" required>
+        <input type="text" placeholder="Qual o site da sua empresa?" required>
+        <textarea placeholder="Qual seu segmento?" required></textarea>
+        <button type="submit">Receber Diagnóstico Personalizado</button>
+    </form>
+</section>
+
+<footer>
+    <p>© 2023 GFM Consultoria. Todos os direitos reservados.</p>
+</footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const form = document.querySelector("form");
+        form.addEventListener("submit", function(event) {
+            const inputs = form.querySelectorAll("input, textarea");
+            let valid = true;
+            inputs.forEach(input => {
+                if (!input.value) {
+                    valid = false;
+                    input.style.borderColor = "red"; // Highlight empty fields
+                } else {
+                    input.style.borderColor = ""; // Reset border color
+                }
+            });
+            if (!valid) {
+                event.preventDefault(); // Prevent form submission if invalid
+                alert("Por favor, preencha todos os campos.");
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
